@@ -69,7 +69,6 @@
   
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
-        @stack('js')
 
         <script>
             $(document).ready(function() {
@@ -169,6 +168,5 @@
             });
         </script>
         @stack('js')
-        @include("components.js.dashboard")
     </body>
 </html>
