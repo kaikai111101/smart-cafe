@@ -17,20 +17,24 @@ class SaleSeeder extends Seeder
     {
         try {
             DB::beginTransaction();
-            for ($i = 0; $i < 10000; $i++) {
+            for ($i = 0; $i < 500; $i++) {
                 $sale = Sale::factory()->create();
-                $num_menus = random_int(1, 10);
+                $num_menus = random_int(1, 3);
                 $total = 0;
                 for ($j = 0; $j < $num_menus;  $j++){
-                    $menuId = random_int(1, 309);
+                    $menuId = random_int(1, 100);
                     $quantity = random_int(1, 10);
                     DB::table("sale_menu")->insert(["sale_id" => $sale->id, "menu_id" => $menuId, "quantity" => $quantity]);
                     $menu = Menu::where('id', $menuId)->first();
                     $total += $menu->price * $quantity;
-
+                    echo $j;
+                    echo "\n";
                 }
                 $sale->total_price = $total;
                 $sale->save();
+                echo $i;
+                echo "\n";
+
             }
             DB::commit();
         } catch (\Exception $e) {

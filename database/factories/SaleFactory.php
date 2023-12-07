@@ -18,7 +18,7 @@ class SaleFactory extends Factory
     public function definition()
     {
         return [
-            'sale_date' => $this->faker->dateTimeBetween('-12 years'),
+            'sale_date' => $this->faker->dateTimeBetween('-11 years'),
             'code' => $this->faker->numerify('TRX_#####################'),
             'customer_name' => $this->faker->name(),
         ];
