@@ -19,6 +19,8 @@
         <!-- CSS -->
         <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -67,7 +69,8 @@
         <script src="{{ asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
         <script src="{{ asset('black') }}/js/theme.js"></script>
         <script src="{{ asset('black') }}/js/notifer.js"></script>
-
+  
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
         @stack('js')
 
@@ -169,5 +172,6 @@
             });
         </script>
         @stack('js')
+        @include("components.js.dashboard")
     </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Sale;
+use App\Services\SaleService;
+use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
@@ -21,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $sY = SaleService::getSalesForLastNYear(12);
+        $sM = SaleService::getSalesForLastNMonth(12);
+        $tableS = SaleService::getSalesOfTheYear(2013);
+        return view('components.dashboard')->with('salesYearly', $sY)->with('salesMonthly', $sM)->with('tableData', $tableS);
     }
 }
