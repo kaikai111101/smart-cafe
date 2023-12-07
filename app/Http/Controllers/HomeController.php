@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $sY = SaleService::getSalesForLastNYear(12);
         $sM = SaleService::getSalesForLastNMonth(12);
-        $tableS = SaleService::getSalesOfTheYear(2013);
+        $tableS = SaleService::getSalesOfTheYear(Carbon::now()->year);
         return view('components.dashboard')->with('salesYearly', $sY)->with('salesMonthly', $sM)->with('tableData', $tableS);
     }
 }
