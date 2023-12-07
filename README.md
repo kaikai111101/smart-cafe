@@ -1,5 +1,6 @@
 # Dashboard Smart Cafe Integrated System
-by 18220032 - Rifki Kaida
+by 18220032 - Rifki Kaida 
+Kelompok 1 - Kelas 02
 
 
 ## Fitur
